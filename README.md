@@ -371,3 +371,5 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 ## Release Notes
 
 Want to know which bugs have been fixed and the new features of each version? Check out the [release notes](https://github.com/RocketPy-Team/RocketPy/releases).
+
+## Updates\n- Preparing for Wyoming soundings with tumbler-sim!
