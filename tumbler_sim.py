@@ -1,1 +1,1 @@
-from rocketpy import Environment: env = Environment()
+from rocketpy import Environment; env = Environment()
