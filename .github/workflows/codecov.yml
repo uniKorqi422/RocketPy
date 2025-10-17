@@ -1,35 +1,12 @@
-coverage:
-  status:
-    project:
-      default:
-        # basic
-        target: auto
-        threshold: 1%
-        base: auto
-        flags:
-          - unit
-        paths:
-          - "rocketpy"
-        # advanced settings
-        branches:
-          - master
-          - develop
-        if_ci_failed: error # success, failure, error, ignore
-        informational: false
-        only_pulls: false
-    patch:  # Computes only the changes introduced in the PR
-      default:
-        # basic
-        target: auto
-        threshold: 5%
-        base: auto
-        # advanced
-        branches:
-          - master
-          - develop
-        if_ci_failed: error # success, failure, error, ignore
-        only_pulls: false
-        flags:
-          - "unit"
-        paths:
-          - "rocketpy"
+name: Codecov
+on: [push, pull_request]
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    - name: Run tests and coverage
+      run: pytest --cov=rocketpy
+      
