@@ -10,9 +10,10 @@ jobs:
       with:
         python-version: '3.14'
     - name: Install dependencies
-      run: pip install -r requirements.txt pytest-cov
+      run: pip install -r requirements.txt pytest-cov dill
     - name: Run tests with coverage
       run: pytest --cov=rocketpy --cov-report=xml
     - name: Upload coverage
       uses: codecov/codecov-action@v4
-      
+      with:
+        files: ./coverage.xml
